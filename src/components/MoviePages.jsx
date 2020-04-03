@@ -5,17 +5,17 @@ class MoviePages extends React.Component {
     super();
 
     this.state = {
-      range: this.getRange(1)
+      firstPageOfRange: 1
     };
 
     this.handleChangePages = this.handleChangePages.bind(this);
   }
 
   handleChangePages = value => () => {
-    const updatePages = this.getRange((this.state.range[0] += value));
-    
+    const updatePage = this.state.range += value;
+
     this.setState({
-      range: updatePages
+      firstPageOfRange: updatePage
     });
   };
 
@@ -31,18 +31,17 @@ class MoviePages extends React.Component {
   };
 
   render(){
-    console.log(this.props);
+    
     const { page, updatePage } = this.props;
 
     return (
       <div className="row">
         <ul className="pagination">
           <li className="page-item">
-            <div className="page-link" onClick={this.handleChangePages(-1)}>
-              prev
+            <div className="page-link" onClick={this.handleChangePages(-1)} >            prev
             </div>
           </li>
-          {this.state.range.map((item, index) => {
+          {this.getRange(this.state.firstPageOfRange).map((item, index) => {
             return (
               <li
                 className={`page-item ${page === item ? "active" : ""}`}

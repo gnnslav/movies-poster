@@ -73,7 +73,7 @@ class App extends React.Component {
     const updateMoviesWillWatch = this.state.moviesWillWatch.filter(
       item => item.id !== movie.id
     );
-    console.log(updateMoviesWillWatch);
+
     this.setState({
       moviesWillWatch: updateMoviesWillWatch
     });
@@ -81,7 +81,7 @@ class App extends React.Component {
 
   removeMovie(movie) {
     const updateMovies = this.state.movies.filter(item => item.id !== movie.id);
-    console.log(updateMovies);
+
     this.setState({
       movies: updateMovies
     });
