@@ -5,6 +5,7 @@ export const PaginationContainer = styled.ul`
     margin: 16px auto;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 `;
 
 export const PageItem = styled.li`

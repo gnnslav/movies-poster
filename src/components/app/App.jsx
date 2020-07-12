@@ -7,7 +7,7 @@ import Spinner from "../spinner/Spinner";
 import {GlobalStyle} from "./globalStyle";
 import {Container, ContentBox, Col, MoviesBox, MoviesWillWatchContainer, SortPanel, Slider}  from './AppStyle';
 
-import HeaderNav from "../header/HeaderNav";
+//import HeaderNav from "../header/HeaderNav";
 import MovieItem from "../movieItem/MovieItem";
 import MovieTabs from "../movieTabs/MovieTabs";
 import MoviePages from "../moviePages/MoviePages";
@@ -177,26 +177,9 @@ class App extends React.Component {
         <div>
             <GlobalStyle/>
                 <Container> 
-                    <HeaderNav 
+                    {/* <HeaderNav 
                         movieWillWatch={this.state.moviesWillWatch.length}
-                    />
-                        {/* <MoviesWillWatchContainer>
-                            <SortPanel>
-                                <p>will watch: {this.state.moviesWillWatch.length}</p>
-                            </SortPanel>
-                            <Slider>
-                                {this.state.moviesWillWatch.map((movie)=>{
-                                    return(
-                                        <li key={movie.id}>
-                                            <MovieWillWatchItem 
-                                                movie={movie}
-                                                removeMoviesToWillWatch = {this.removeMoviesToWillWatch}
-                                            />
-                                        </li>
-                                    );
-                                })}
-                            </Slider>
-                        </MoviesWillWatchContainer>   */}
+                    /> */}
                 </Container>
                 <Container>
                     <PromoSlider                           
@@ -205,37 +188,12 @@ class App extends React.Component {
                         nextmovie = {this.getMovieForSlider(2)}
                     /> 
                 </Container>       
-                    {/* <div className="col-12 mb-4">
-                        <MoviePages 
-                            page = {this.state.page}
-                            total_pages = {this.state.total_pages}
-                            updatePage = {this.updatePage}
-                        />
-                    </div> */}
                 <ContentBox>
                     <Col width='20vw'>
                         <MovieTabs  
                             sort_by = {this.state.sort_by}
                             updateSortBy = {this.updateSortBy}
                         /> 
-
-                        {/* <MoviesWillWatchContainer>
-                            <SortPanel>
-                                <p>will watch: {this.state.moviesWillWatch.length}</p>
-                            </SortPanel>
-                            <Slider>
-                                {this.state.moviesWillWatch.map((movie)=>{
-                                    return(
-                                        <li key={movie.id}>
-                                            <MovieWillWatchItem 
-                                                movie={movie}
-                                                removeMoviesToWillWatch = {this.removeMoviesToWillWatch}
-                                            />
-                                        </li>
-                                    );
-                                })}
-                            </Slider>
-                        </MoviesWillWatchContainer>   */}
                     </Col>
                     <Col width='80vw'>
                         <MoviePages 
@@ -243,10 +201,6 @@ class App extends React.Component {
                             totalPages = {this.state.total_pages}
                             updatePage = {this.updatePage}
                         />
-                            {/* <MovieTabs  
-                                sort_by = {this.state.sort_by}
-                                updateSortBy = {this.updateSortBy}
-                            />  */}
                         <MoviesBox >
                         {this.state.movies.map(movie => {
                             return ( 
@@ -267,13 +221,12 @@ class App extends React.Component {
                         </MoviesBox>
                     </Col>
                 </ContentBox>
-                
-                <div className="col-12 mb-4">
-                <MoviesWillWatchContainer>
-                            <SortPanel>
-                                <p>will watch: {this.state.moviesWillWatch.length}</p>
-                            </SortPanel>
-                            <Slider>
+                <Container>
+                    <MoviesWillWatchContainer>
+                        <SortPanel>
+                            <p>will watch: {this.state.moviesWillWatch.length}</p>
+                        </SortPanel>
+                        <Slider>
                                 {this.state.moviesWillWatch.map((movie)=>{
                                     return(
                                         <li key={movie.id}>
@@ -284,10 +237,10 @@ class App extends React.Component {
                                         </li>
                                     );
                                 })}
-                            </Slider>
-                        </MoviesWillWatchContainer> 
-                </div>
-            </div>
+                        </Slider>
+                    </MoviesWillWatchContainer> 
+                </Container>
+        </div>
 
         );
     }

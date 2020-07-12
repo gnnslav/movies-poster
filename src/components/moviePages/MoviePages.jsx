@@ -15,13 +15,9 @@ class MoviePages extends React.Component {
   handleChangePages = (value) => () => {
     let start = this.state.firstPageOfRange;
     const updatePage = start += value;
-    // console.log(updatePage);
      if(updatePage < 3 || updatePage > 495){
       return;
     }
-    // this.setState(state=>({
-    //   firstPageOfRange: state.firstPageOfRange +=value
-    // }));
     this.setState({
       firstPageOfRange: updatePage
     });
@@ -50,16 +46,16 @@ class MoviePages extends React.Component {
       <PaginationContainer>
         
           <PageItem>
-            <PageLink onClick={this.handleChangePages(-1)} >            prev
-            </PageLink>
+            <PageLink onClick={this.handleChangePages(-1)} >prev</PageLink>
           </PageItem>
           <PageItem>
             <PageLink onClick={()=>updatePage(1)} >1</PageLink>
           </PageItem>
-          {(this.state.firstPageOfRange === 3) ? 
+          {(this.state.firstPageOfRange === 3) 
+          ? 
             <PageItem>
               <PageLink onClick={()=>updatePage(2)} >2</PageLink>
-          </PageItem>
+            </PageItem>
           :
           <PageItem>
             <PageLink onClick={this.handleChangePages(-1)} >
@@ -76,7 +72,8 @@ class MoviePages extends React.Component {
               </PageItem>
             );
           })}
-          {(this.state.firstPageOfRange === (totalPages-7)) ? 
+          {(this.state.firstPageOfRange === (totalPages-7)) 
+            ? 
             <PageItem>
               <PageLink onClick={()=>updatePage(totalPages-1)} >
                 {totalPages-1}

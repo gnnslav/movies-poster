@@ -11,10 +11,7 @@ const MovieWillWatchItem = props =>{
     const {movie, removeMoviesToWillWatch} = props;
     console.log(movie);
     return(
-        <MovieItem url={`${API_IMG}${movie.poster_path}`}>
-                {/* <MovieImg src={`https://image.tmdb.org/t/p/w500${movie.poster_path ||
-                movie.backdrop_path}`} alt={movie.title}/> */}
-                
+        <MovieItem url={`${API_IMG}${movie.poster_path}`}>           
             <IconPanel>
                 <IconStar src={star}></IconStar>
                 <p>{movie.vote_average}</p>

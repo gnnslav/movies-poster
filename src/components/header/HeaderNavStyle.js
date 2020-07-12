@@ -40,6 +40,7 @@ export const CurrentItem = styled.div`
     height: 30px;
     margin: 5px;
     padding: 1px;
+    text-align: center;
     border-radius: 50%;
     border: 1px solid var(--borderColor);
     background-color: var(--hoverColor);

@@ -3,45 +3,77 @@ import styled from 'styled-components';
 
 export const SliderContainer = styled.div `
     width: 100%;
-    height: 100vh;
+    height: 700px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-image: ${props => `url(${props.url})`};
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-origin: content-box;
-    background-size: cover;
-    opasity: .7;
-    ${'' /* border: 1px solid var(--borderColor); */}
+    justify-content: space-around;
+    @media screen and (max-width: 800px) {
+        margin: 0 1%;
+    }
 `;
 
-export const MovieDescription = styled.div `
-    width: 40%;
+export const MainImage = styled.div `
+    width: 50%;
     height: 100%;
+    margin: 0 5%;
+    display: flex;
+    justify-content: center;
+    background-image: ${props => `url(${props.url})`};
+    background-position: center center;
+    background-size: cover;
+    border: var(--borderColor);
+    ${'' /* border: 1px solid var(--borderColor); */}
+    @media screen and (max-width: 1060px) {
+        width: 60%;
+    }
+    @media screen and (max-width: 800px) {
+        width: 80%;
+    }
+`;
+
+export const SlidersWrap = styled.div`
+    width: 50%;
+    height: 100%;
+    position: relative:
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    border: var(--borderColor);
+    @media screen and (max-width: 1060px) {
+        width: 40%;
+    }
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+`;
+export const MovieDescription = styled.div `
+    width: 100%;
+    height: 50%;
+    position: absolute:
+    top: 0px;
+    text-align: center;
     color: var(--textColor);
-    border: 1px solid green;
 `;
 
 export const MovieTitle = styled.h3 `
-    fond-weight: bold;
-    color: white;
+    font-weight: bold;
 `;
 
 export const MovieOverview = styled.p `
-    fond-weight: bold;
-    color: white;
+    font-weight: lighter;
+    padding: 5%;
+
 `;
 
 export const MovieSlidersContainer = styled.div `
-    width: 60%;
-    height: 100%;
-    position: relative;
+    width: 100%;
+    height: 50%;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
-    ${'' /* align-self: center; */}
-    border: 1px solid green;
+    align-items: flex-end;
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
 `;
 
 export const MovieSlider = styled.div `
@@ -51,7 +83,5 @@ export const MovieSlider = styled.div `
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    align-self: center;
-    position: relative;
-    border: 1px solid red;
+    border: var(--borderColor);
 `;

@@ -7,7 +7,7 @@ export const CardContainer = styled.div `
     position: relative;
     width: ${props => props.width};
     height: 320px;
-    margin: 2vw;
+    margin: 5px;
     background-color: var(--mainColor);
     color: var(--textColor);
     line-height: 50%;

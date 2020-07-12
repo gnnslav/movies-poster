@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const MovieTabsContainer = styled.ul`
     width: 100%;
+    margin: 16px 0;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -9,7 +10,6 @@ export const MovieTabsContainer = styled.ul`
     color: var(--textColor);
     background-color: var(--mainColor);
     border: 1px solid var(--borderColor);
-
     @media screen and (max-width: 800px) {
         flex-direction: row;
         margin-right: 10px;

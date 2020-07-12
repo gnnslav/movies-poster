@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import {HeaderContainer, Logo, MenuList, MenuItem, CurrentItem} from "./HeaderNavStyle";
 
@@ -8,12 +9,12 @@ const Header = (props)=>{
         <HeaderContainer>
             <Logo></Logo>
             <MenuList>
-                <MenuItem> Home
-                    {/* <a href="#">Home</a> */}
+                <MenuItem> 
+                    <Link to="/"> Home </Link>
                 </MenuItem>
-                <MenuItem> Will watch list
-                    {/* <a href="#">Will Watch List</a> */}
-                </MenuItem>
+                <MenuItem> 
+                    <Link to="/WillWatchList">Will watch list</Link>
+                  </MenuItem>
                 <CurrentItem>
                     {movieWillWatch > 0 ? movieWillWatch : ''}
                 </CurrentItem>

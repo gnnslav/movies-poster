@@ -7,10 +7,10 @@ import {CardContainer,
       } from './MovieItemStyle';
 import { IconPanel, IconStar} from '../icons/IconsStyle';
 import star from "../../assets/star.png";
-import API_IMG from "./../../config/api";
+import API_IMG from "../../config/api";
 
 
-//const MovieItem = props =>
+
 class MovieItem extends React.Component {
   constructor() {
     super();
@@ -20,10 +20,8 @@ class MovieItem extends React.Component {
   }
 
   render() {
-    //console.log(this.props.movie);
     const {
       movie,
-      // removeMovie,
       addMovieToWillWatch,
       removeMoviesToWillWatch
     } = this.props;
@@ -56,7 +54,7 @@ class MovieItem extends React.Component {
 
 
     return (
-      <CardContainer width={"220px"}>
+      <CardContainer width={"200px"}>
         <ImgContainer>
           <CardImg 
             src = {`${API_IMG}${movie.poster_path ||
@@ -73,11 +71,6 @@ class MovieItem extends React.Component {
               <p>Rating {movie.vote_average} </p>
               {this.state.willWatch ? btnWillWatch : btnRemoveWillWatch}
           </IconPanel>  
-          {/* <DeleteBtn type = "button"
-                    onClick = {
-                      removeMovie.bind(this, movie)
-                    } >
-          </DeleteBtn>   */}
         </CardBody>  
       </CardContainer>   
     );
